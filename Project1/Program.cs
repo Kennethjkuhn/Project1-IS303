@@ -50,35 +50,42 @@ namespace Project1
                         //create student objects for each position in the array 
                         for (int i = 0; i < numStudents; i++)
                         {
-                            //initialize object at position i
-                            studentArray[i] = new Student();
+                            
+                            //initialize temporary variables to put into constructor for Student object
+                            string currFirst = null;
+                            string currLast = null;
+                            double currHW = 0;
+                            double currQuiz = 0;
+                            double currProject = 0;
+                            double currTest = 0;
                             
                             //call method and get input to set first name of student objects
                             Console.WriteLine("\nPlease enter the first name for student " + (i+1) + ": ");
-                            studentArray[i].setFirstName(Console.ReadLine());
+                            currFirst = Console.ReadLine();
                             
                             //call method and get input to set last name for student objects
                             Console.WriteLine("\nPlease enter the last name for student " + (i + 1) + ": ");
-                            studentArray[i].setLastName(Console.ReadLine());
+                            currLast = Console.ReadLine();
 
                             //call method and get input to set homework average grade
                             Console.WriteLine("\nPlease enter the homework average for student " + (i + 1) + ": ");
-                            studentArray[i].setHomeWorkAvg(Convert.ToDouble(Console.ReadLine()));
+                            currHW = Convert.ToDouble(Console.ReadLine());
 
                             //call method and get input to set quiz average grade
                             Console.WriteLine("\nPlease enter the quiz average for student " + (i + 1) + ": ");
-                            studentArray[i].setQuizAvg(Convert.ToDouble(Console.ReadLine()));
+                            currQuiz = Convert.ToDouble(Console.ReadLine());
 
                             //call method and get input to set project average grade
                             Console.WriteLine("\nPlease enter the project average for student " + (i + 1) + ": ");
-                            studentArray[i].setProjectAvg(Convert.ToDouble(Console.ReadLine()));
+                            currProject = Convert.ToDouble(Console.ReadLine());
 
                             //call method and get input to set test average grade
                             Console.WriteLine("\nPlease enter the test average for student " + (i + 1) + ": ");
-                            studentArray[i].setTestAvg(Convert.ToDouble(Console.ReadLine()));
+                            currTest = Convert.ToDouble(Console.ReadLine());
 
+                            //initialize object at position i
                             //call method to calculate final grade with weights and determine final letter grade
-                            studentArray[i].calcGrade();
+                            studentArray[i] = new Student(currFirst, currLast, currHW, currQuiz, currProject, currTest);
 
                         }
                     }
@@ -143,7 +150,7 @@ namespace Project1
                 //the following will display if user chooses 3 and exits the program
                 else if (menuChoice == 3)
                 {
-                    Console.WriteLine("\n\nPress enter to exit the program...");
+                    Console.WriteLine("\n\nExiting the program...");
                     Console.ReadLine();
                 }
 
