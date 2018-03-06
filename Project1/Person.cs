@@ -12,6 +12,12 @@ namespace Project1
         protected string firstName;
         protected string lastName;
 
+        public Person(string sFirstName, string sLastName)
+        {
+            this.firstName = sFirstName;
+            this.lastName = sLastName;
+        }
+
         public void setFirstName(string currFirst)
         {
             firstName = currFirst;
