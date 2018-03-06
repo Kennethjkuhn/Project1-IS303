@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Project1
 {
-    class Student : Person
+     class Student : Person
     {
         private double homeWorkAvg;
         private double quizAvg;
@@ -14,6 +14,17 @@ namespace Project1
         private double testAvg;
         private double finalGrade;
         private char letterGrade;
+
+        public Student(string sFirstName, string sLastName, double dQuizAvg, double dHomeWorkAvg, double dProjectAvg, double dTestAvg) : base(sFirstName, sLastName)
+        {
+            this.firstName = sFirstName;
+            this.lastName = sLastName;
+            this.homeWorkAvg = dHomeWorkAvg;
+            this.quizAvg = dQuizAvg;
+            this.projectAvg = dProjectAvg;
+            this.testAvg = dTestAvg;
+            this.calcGrade();
+        }
 
         public void setHomeWorkAvg(double currHW)
         {
